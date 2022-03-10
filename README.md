@@ -19,7 +19,7 @@ Here my complete wiring:
 
 ![obrazek](https://user-images.githubusercontent.com/85900069/157727827-8f59f96f-6bf1-460e-8eb3-5d39d69d8707.png)
 
-Here you find a sketch made in Fritzing.
+[Here](https://github.com/zbj3ji/esp32-cam_bme_280_bme680_esphome/blob/fe0fee8bdba7bd56e71f226a9bce32e7e605f066/Sketch_BME280_ESP32-CAM.fzz) you find a sketch made in Fritzing.
 
 **Be careful: BME280/680 are sensor with supply power 3.3V!** **ESP-CAM works with both 3.3/5V, but for better stability I recommend to use 5V**.
 
@@ -29,7 +29,7 @@ Here you find a sketch made in Fritzing.
 
 Based on the ESP32 (or other microcontroller) pinout, you have to define the right I2C pins. In my case I used GPIO13 as SDA and GPIO12 as scl (see wiring above). Another very important thing is to use correct **sensor address** - in my case **0x76**, but it can be **0x77** as well.
 
-[Here](https://esphome.io/components/esp32_camera.html) a default example from ESPHome web site.
+[Here](https://esphome.io/components/esp32_camera.html) a default example from ESPHome web site about ESP32-CAM.
 
 # Integration
 
