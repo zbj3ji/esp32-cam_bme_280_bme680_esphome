@@ -11,6 +11,15 @@ I was personally struggling to find out comprehensive tutorial, how to integrate
 
 Here in general pinout of **ESP32-CAM**. The **GPIO** names are important to set **[I2C](https://en.wikipedia.org/wiki/I%C2%B2C)** corrcetly. To this poin we will come again when we write the code.
 
+Image source: [RandomNerdTutorials.com](https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/)
+
+![obrazek](https://user-images.githubusercontent.com/85900069/157596660-dc251f8d-3c2d-40e0-96c1-7e147c1d8ea9.png)
+
+Here my complete wiring:
+
+
+
+**Be careful: BME280/680 are sensor with supply power 3.3V!** **ESP-CAM works with both 3.3/5V, but for better stability I recommend to use 5V**.
 
 # Code
 
