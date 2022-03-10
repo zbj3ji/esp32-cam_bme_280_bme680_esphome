@@ -1,0 +1,100 @@
+esphome:
+  name: camlivingroom
+  platform: ESP32
+  board: esp32cam
+
+wifi:
+  ssid: !secret my_wifi_ssid
+  password: !secret my_wifi_psswd
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  #ap:
+  #  ssid: !secret my_emergency_ssid
+  #  password: !secret my_emergency_psswd
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret my_api_psswd
+
+ota:
+  password: !secret my_ota_psswd
+
+# Example configuration entry
+esp32_camera:
+  external_clock:
+    pin: GPIO0
+    frequency: 20MHz
+  i2c_pins: #internal for camera
+    sda: GPIO26
+    scl: GPIO27
+  data_pins: [GPIO5, GPIO18, GPIO19, GPIO21, GPIO36, GPIO39, GPIO34, GPIO35]
+  vsync_pin: GPIO25
+  href_pin: GPIO23
+  pixel_clock_pin: GPIO22
+  power_down_pin: GPIO32
+
+  # Image settings
+  name: Obyvak ESP32 CAM
+  resolution: 1024x768
+  jpeg_quality: 10 #10best 63 worst
+  contrast: 1
+  brightness: 1
+  saturation: 1
+  vertical_flip: true
+  horizontal_mirror: true
+  max_framerate: 15 fps
+  #idle_framerate: 1 fps #default 0.1
+
+i2c: #i2c for the sensor
+  sda: GPIO13 #4
+  scl: GPIO12 #5
+  scan: true
+  
+sensor:
+  - platform: bme280
+    temperature:
+      name: "Teplota" # temperature
+      id: bme280_temperature
+      oversampling: 16x
+    pressure:
+      name: "Tlak" # air pressure
+      id: bme280_pressure
+    humidity:
+      name: "Vlhkost" # humidity
+      id: bme280_humidity
+    address: 0x76
+    update_interval: 15s
+  - platform: template
+    name: "Nadmořská výška" # altitide
+    lambda: |-
+      const float STANDARD_SEA_LEVEL_PRESSURE = 1013.25; //in hPa, see note
+      return ((id(bme280_temperature).state + 273.15) / 0.0065) *
+        (powf((STANDARD_SEA_LEVEL_PRESSURE / id(bme280_pressure).state), 0.190234) - 1); // in meter
+    update_interval: 15s
+    icon: 'mdi:signal'
+    unit_of_measurement: 'm'
+  - platform: template
+    name: "Absolutní vlhkost" # Absolut humidity
+    lambda: |-
+      const float mw = 18.01534;    // molar mass of water g/mol
+      const float r = 8.31447215;   // Universal gas constant J/mol/K
+      return (6.112 * powf(2.718281828, (17.67 * id(bme280_temperature).state) /
+        (id(bme280_temperature).state + 243.5)) * id(bme280_humidity).state * mw) /
+        ((273.15 + id(bme280_temperature).state) * r); // in grams/m^3
+    accuracy_decimals: 2
+    update_interval: 15s
+    icon: 'mdi:water'
+    unit_of_measurement: 'g/m³'
+  - platform: template
+    name: "Rosný bod" # dew point
+    lambda: |-
+      return (243.5*(log(id(bme280_humidity).state/100)+((17.67*id(bme280_temperature).state)/
+      (243.5+id(bme280_temperature).state)))/(17.67-log(id(bme280_humidity).state/100)-
+      ((17.67*id(bme280_temperature).state)/(243.5+id(bme280_temperature).state))));
+    unit_of_measurement: °C
+    icon: 'mdi:thermometer-alert'  
