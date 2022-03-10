@@ -27,6 +27,8 @@ Here my complete wiring:
 
 Based on the ESP32 (or other microcontroller) pinout, you have to define the right I2C pins. In my case I used GPIO13 as SDA and GPIO12 as scl (see wiring above). Another very important thing is to use correct **sensor address** - in my case **0x76**, but it can be **0x77** as well.
 
+[Here](https://esphome.io/components/esp32_camera.html) a default example from ESPHome web site.
+
 # Integration
 
 
