@@ -23,9 +23,9 @@ Here my complete wiring:
 
 # Code
 
-Here complete YAML file for ESP32-CAM & BME280.
+[Here](cam_livingroom_bme280.yaml) complete YAML file for **ESP32-CAM & BME280**.
 
-Based on the ESP32 (or other microcontroller) pinout, you have to define the right I2C pins. In my case I used GPIO13 as SDA and GPIO12 as scl (see wiring above).
+Based on the ESP32 (or other microcontroller) pinout, you have to define the right I2C pins. In my case I used GPIO13 as SDA and GPIO12 as scl (see wiring above). Another very important thing is to use correct **sensor address** - in my case **0x76**, but it can be **0x77** as well.
 
 # Integration
 
@@ -35,4 +35,7 @@ This is an example, how it looks like in Home Assistant:
 ![obrazek](https://user-images.githubusercontent.com/85900069/157704845-a7803080-a321-4798-959b-7c81e6a83014.png)
 
 # Image
+
+![obrazek](https://user-images.githubusercontent.com/85900069/157709064-71d61f04-efb6-4ea1-9073-1f526c00dcc8.png)
+![obrazek](https://user-images.githubusercontent.com/85900069/157709102-d8f57a47-e469-4f89-9b7e-901a9eccf472.png)
 
