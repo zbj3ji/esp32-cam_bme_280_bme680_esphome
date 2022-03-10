@@ -9,7 +9,7 @@ I was personally struggling to find out comprehensive tutorial, how to integrate
 
 # Wiring
 
-Here in general pinout of **ESP32-CAM**. The **GPIO** names are important to set **[I2C](https://en.wikipedia.org/wiki/I%C2%B2C)** corrcetly. To this point we will come again when we write the code.
+Here in general pinout of **ESP32-CAM**. The **GPIO** names are important to set **[I2C](https://en.wikipedia.org/wiki/I%C2%B2C)** correctly. To this point we will come again when we write the code.
 
 Image source: [RandomNerdTutorials.com](https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/)
 
@@ -17,7 +17,9 @@ Image source: [RandomNerdTutorials.com](https://randomnerdtutorials.com/esp32-ca
 
 Here my complete wiring:
 
+![obrazek](https://user-images.githubusercontent.com/85900069/157727827-8f59f96f-6bf1-460e-8eb3-5d39d69d8707.png)
 
+Here you find a sketch made in Fritzing.
 
 **Be careful: BME280/680 are sensor with supply power 3.3V!** **ESP-CAM works with both 3.3/5V, but for better stability I recommend to use 5V**.
 
