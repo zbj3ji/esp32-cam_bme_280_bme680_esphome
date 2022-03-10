@@ -1,5 +1,5 @@
 # ESP32-CAM & BME280/680 & Home Assistant & ESPHome integration
-Using **ESP32-CAM** (AI-Thinker) with Bosch Sensors **[BME280](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/)/[BME680](https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme680/)** via I2C and its integration into **[Home Assistant](https://www.home-assistant.io/) via [Esphome](https://esphome.io/)**. With some small modifications you can use this code also for other boards e.g. ESP01/ESP12/... which I already tried as well. Focus here is **NOT** to show how to do flashing via esptool, just to share YAML configuration file to save your time in development phase.
+Using **ESP32-CAM** (AI-Thinker) with Bosch Sensors **[BME280](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/)/[BME680](https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme680/)** via I2C and its integration into **[Home Assistant](https://www.home-assistant.io/) via [Esphome](https://esphome.io/)**. With some small modifications you can use this code also for other boards e.g. ESP01/ESP12/... which I already tried as well. Focus here is **NOT** to show how to do flashing via esptool, just to share YAML configuration file used for flashing of microcontroller by esptool to save your time in development phase.
 
 *Note:* **[BME280](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/)** is a temperature sensor. **[BME680](https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme680/)** is a gas sensor.
 
@@ -9,7 +9,7 @@ I was personally struggling to find out comprehensive tutorial, how to integrate
 
 # Wiring
 
-Here in general pinout of **ESP32-CAM**. The **GPIO** names are important to set **[I2C](https://en.wikipedia.org/wiki/I%C2%B2C)** correctly. To this point we will come again when we write the code.
+Here pinout of **ESP32-CAM**. The **GPIO** names are important to set **[I2C](https://en.wikipedia.org/wiki/I%C2%B2C)** correctly. To this point we will come again when we write the code.
 
 Image source: [RandomNerdTutorials.com](https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/)
 
@@ -27,7 +27,7 @@ Here my complete wiring:
 
 [Here](cam_livingroom_bme280.yaml) complete YAML file for **ESP32-CAM & BME280**.
 
-Based on the ESP32 (or other microcontroller) pinout, you have to define the right I2C pins. In my case I used GPIO13 as SDA and GPIO12 as scl (see wiring above). Another very important thing is to use correct **sensor address** - in my case **0x76**, but it can be **0x77** as well.
+Based on the ESP32 (or other microcontroller) pinout, you have to define the right I2C pins. In my case I used GPIO13 as SDA and GPIO12 as scl (see wiring above). You can change it as you wish, but then you need to use the right pins. Another very important thing is to use correct **sensor address** - in my case **0x76**, other option is e.g. **0x77**.
 
 [Here](https://esphome.io/components/esp32_camera.html) a default example from ESPHome web site about ESP32-CAM.
 
