@@ -1,7 +1,7 @@
 # ESP32-CAM & BME280/680 & Home Assistant & ESPHome integration
 Using **ESP32-CAM** (AI-Thinker) with Bosch Sensors **[BME280](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/)/[BME680](https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme680/)** via I2C and its integration into **[Home Assistant](https://www.home-assistant.io/) via [Esphome](https://esphome.io/)**. With some small modifications you can use this code also for other boards e.g. ESP01/ESP12/... which I already tried as well. Focus here is **NOT** to show how to do flashing via esptool, just to share YAML configuration file used for flashing of microcontroller by esptool to save your time in development phase.
 
-*Note:* **[BME280](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/)** is a temperature sensor. **[BME680](https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme680/)** is a gas sensor.
+*Note:* **[BME280](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/)** is a temperature sensor. **[BME680](https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme680/)** has additionally a gas sensor.
 
 # Intro
 
