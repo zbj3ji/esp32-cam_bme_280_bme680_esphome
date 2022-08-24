@@ -5,7 +5,7 @@ Using **ESP32-CAM** (AI-Thinker) with Bosch Sensors **[BME280](https://www.bosch
 
 # Intro
 
-I was personally struggling to find out comprehensive tutorial, how to integrate ESP32-CAM together with any kind of Bosch sensor via I2C. The main motivation has been to use just one microcontroller (in this case ESP32-CAM) for everything - camera & temperature/gas sensor. 
+I was personally struggling to find out comprehensive tutorial, how to integrate ESP32-CAM together with any kind of Bosch sensor via I2C. **The main motivation had been to use just one microcontroller (in this case ESP32-CAM) for everything - camera & temperature/gas sensor.** 
 
 # Wiring
 
