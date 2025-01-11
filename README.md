@@ -38,8 +38,10 @@ This is an example, how it looks like in Home Assistant:
 
 ![obrazek](https://user-images.githubusercontent.com/85900069/157704845-a7803080-a321-4798-959b-7c81e6a83014.png)
 
-# Image
+# Images
 
-![obrazek](https://user-images.githubusercontent.com/85900069/157709064-71d61f04-efb6-4ea1-9073-1f526c00dcc8.png)
-![obrazek](https://user-images.githubusercontent.com/85900069/157709102-d8f57a47-e469-4f89-9b7e-901a9eccf472.png)
+| Wiring             |  Wiring |
+:-------------------------:|:-------------------------:
+![obrazek](https://user-images.githubusercontent.com/85900069/157709064-71d61f04-efb6-4ea1-9073-1f526c00dcc8.png) | ![obrazek](https://user-images.githubusercontent.com/85900069/157709102-d8f57a47-e469-4f89-9b7e-901a9eccf472.png)
+
 
